@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="semantic markup project for IS 120">
+  <!-- Link to normalize.css-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <title>Pivot</title>
+  <style>
+    picture img {
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <picture>
+    <source srcset="images/use-hero-image-web.jpg" media="(min-width: 901px)">
+    <source srcset="images/use-hero-image-tablet.jpg" media="(min-width: 501px)">
+    <source srcset="images/use-hero-image-phone.jpg" media="(max-width: 500px)">
+
+    <img src="images/use-hero-image-web.jpg" alt="beach">
+  </picture>
+  <!-- header w/ navigation and unordered list-->
+  <header>
+    <nav>
+      <ul>
+        <li><a>Home</a></li>
+        <!-- will take you to the index file of these files-->
+        <li><a href="about/"> About</a></li>
+        <li><a href="form/">Form</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div>
+    <!-- your SVG markup goes here.  
+      You can adjust the viewbox and width
+      and height. I set them equal here -->
+
+    <svg viewbox="0 0 200 200" width="200" height="200">
+
+      <circle cx="100" cy="100" r="33
+                                  " stroke="black" fill="yellow" stroke-width="2" />
+
+      <polyline points="100, 25 85, 60 115, 60 100,25" stroke="black" fill="yellow" stroke-width="2" />
+
+      <polyline points="25, 100 60,85 60,115 25,100" stroke="black" fill="yellow" stroke-width="2" />
+
+      <polyline points="100,175 85, 140 115, 140 100, 175" stroke="black" fill="yellow" stroke-width="2" />
+
+      <polyline points="175,100 140, 85 140, 115 175, 100" stroke="black" fill="yellow" stroke-width="2" />
+
+      <polyline points="155, 45 118, 62  138,83 155, 45" stroke="black" fill="yellow" stroke-width="2" />
+
+      <polyline points=" 45,155 62,118 83, 138 45, 155" stroke="black" fill="yellow" stroke-width="2" />
+
+      <polyline points=" 45, 45 83, 62  62, 83 45,45 " stroke="black" fill="yellow" stroke-width="2" />
+
+      <polyline points="155, 155 138,118 118, 138 155,155 " stroke="black" fill="yellow" stroke-width="2" />
+
+    </svg>
+  </div>
+
+  <!-- main content-->
+  <main>
+    <h1>Pivot Creative Solutions</h1>
+  </main>
+
+
+  <!-- footer-->
+  <footer>
+    <h2>Contact Info</h2>
+    <p>Instagram: @pcs_exhibits </p>
+    <p>Facebook: @PivotCreativeSolutions</p>
+    <img src="images/pivot.png" alt="Pivot Logo" width="600" loading="lazy">
+  </footer>
+</body>
+
+</html>
