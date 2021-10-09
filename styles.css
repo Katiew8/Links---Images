@@ -16,7 +16,7 @@
 
 body {
   margin: 3em;
-  font-family: Merriweather;
+  font-family: "Merriweather";
   margin: 0 auto;
   line-height: 110%;
   padding-left: 2rem;
@@ -25,17 +25,17 @@ body {
 
 h1 {
   color: var(--h1-color);
-  font-family: Fira Sans;
+  font-family: "Fira Sans";
 }
 
 h2 {
   color: var(--h2-color);
-  font-family: Fira Sans;
+  font-family: "Fira Sans";
 }
 
 h3 {
   color: var(--h3-color);
-  font-family: Fira Sans;
+  font-family: "Fira Sans";
 }
 
 a {
