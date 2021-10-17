@@ -69,7 +69,7 @@ a:hover {
 }
 
 .center {
-  margin: 0 5rem;
+  margin: 0 auto;
   padding: 0 10rem;
   max-width: 20000px;
 }
