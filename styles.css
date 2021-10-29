@@ -17,12 +17,16 @@
 }
 
 body {
-  margin: 3em;
+  display: flex;
+  flex-direction: column;
+  font-family: "Merriweather";
+
+  /*margin: 3em;
   font-family: "Merriweather";
   margin: 0 auto;
   line-height: 110%;
   padding-left: 2rem;
-  padding-right: 2rem;
+  padding-right: 2rem;*/
 }
 
 h1 {
@@ -82,8 +86,15 @@ h3 {
 }
 
 footer {
-  margin-top: 1em;
-  margin-bottom: 1em;
+  /*how do I get these items to center on the page?*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /*margin-top: 1em;
+  margin-bottom: 1em;*/
+  max-width: 50rem;
+  align-self: center;
 }
 
 img {
@@ -99,6 +110,12 @@ img {
 }
 
 .hero .overlay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  background-color: var(--overlay-background-color);
   position: absolute;
   top: 0;
   left: 0;
@@ -111,10 +128,15 @@ img {
 .hero h1 {
   font-size: 5rem;
   margin: 0;
-  text-align: center;
   text-shadow: 0px 0px 2px white;
   text-shadow: 2px 1px white;
   color: #81bae0;
+  /*font-size: 5rem;
+  margin: 0;
+  text-align: center;
+  text-shadow: 0px 0px 2px white;
+  text-shadow: 2px 1px white;
+  color: #81bae0;*/
 }
 
 .hero p {
@@ -123,27 +145,55 @@ img {
   color: white;
 }
 
+/*panel*/
+.panel {
+  display: flex;
+  flex-direction: column;
+  margin-top: 6rem;
+}
+
+.panel .img-wrapper {
+  order: -1;
+  flex: 1 1 40%;
+}
+
+.panel .text-wrapper {
+  flex: 1 0 60%;
+}
+
+.panel img {
+  height: 100%;
+  object-position: cover;
+  max-height: 300px;
+}
+
 /*card styles*/
 .cards {
   display: flex;
+  flex-direction: column;
+  margin-top: 6rem;
+  gap: 2rem;
 }
 
 .card {
   position: relative;
 }
 
-.cards img {
+/*.cards img {
   max-width: 321.75px;
-}
+} */
 
 .cards .overlay {
+  /* I can't figure out why my overlay is slightly longer than my card images*/
+  display: flex;
+  flex-direction: column;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  padding-top: 7em;
   background-color: var(--overlay-color);
+  padding-top: 10rem;
 }
 
 .cards p {
@@ -157,4 +207,51 @@ img {
 .card:hover .overlay {
   opacity: 0;
   background-color: none;
+}
+
+/*main content css*/
+main {
+  max-width: 70rem;
+  align-self: center;
+  margin: 0 2rem;
+}
+
+body.main main {
+  max-width: 70rem;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+@media (min-width: 700px) {
+  .panel h2 {
+    margin: 0;
+  }
+
+  .panel {
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .panel .left {
+    order: -2;
+  }
+
+  .cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .cards .card {
+    flex: 1 1 45%;
+  }
+}
+
+@media (min-width: 900px) {
+  .cards {
+    flex-wrap: nowrap;
+  }
 }
