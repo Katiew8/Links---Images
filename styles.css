@@ -51,6 +51,7 @@ a {
 
 a:hover {
   color: var(--link-color);
+  animation: link 0.75s;
 }
 
 .button {
@@ -70,6 +71,7 @@ a:hover {
   border: 2px solid var(--button-color);
   padding: 0.75em;
   background-color: var(--button-color);
+  animation: button 0.75s;
 }
 
 .center {
@@ -207,8 +209,8 @@ img {
 }
 
 .card:hover .overlay {
-  opacity: 0;
-  background-color: none;
+  opacity: 1;
+  animation: heartbeat 1.5s ease-in-out infinite both;
 }
 
 /*main content css*/
@@ -244,6 +246,96 @@ header a {
 header a:not([href]):hover {
   color: inherit;
   user-select: none;
+  animation: link 1s;
+}
+
+.form img {
+  max-width: 14rem;
+}
+/*loader*/
+.loader {
+  border-radius: 50%;
+  width: 8rem;
+  height: 8rem;
+  border: 16px solid rgba(95, 94, 94, 0.4);
+  border-left: 16px solid #0e0d0d;
+  animation: load 1000ms infinite linear;
+  padding-top: 5rem;
+  /*cannot figure out how to center*/
+}
+
+@keyframes load {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes link {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes button {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(0.95);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  75% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes heartbeat {
+  from {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  10% {
+    -webkit-transform: scale(0.91);
+    transform: scale(0.91);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  17% {
+    -webkit-transform: scale(0.98);
+    transform: scale(0.98);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  33% {
+    -webkit-transform: scale(0.87);
+    transform: scale(0.87);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  45% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
 }
 
 @media (min-width: 700px) {
