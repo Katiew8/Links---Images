@@ -10,26 +10,45 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira Sans">
   <link rel="stylesheet" href="../styles.css">
-  <title>Document</title>
+  <title>About</title>
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      document.querySelector(".menu-icon").addEventListener(
+        "click", () => {
+          document.querySelector(".main-menu")
+            .classList.toggle("menu-show");
+        })
+    })
+  </script>
 </head>
 <main>
 
   <body>
     <!-- header w/ navigation and unordered list-->
     <header>
-      <nav>
-        <ul>
-          <li><a href="../index.html">Home</a></li>
-          <li><a>About</a></li>
-          <li><a href="../form/index.html">Form</a></li>
-        </ul>
-      </nav>
+      <div class="main-menu">
+        <div class="menu-icon">
+          <svg>
+            <line x1="5%" y1="50%" x2="95%" y2="50%" />
+            <line x1="5%" y1="50%" x2="95%" y2="50%" />
+          </svg>
+        </div>
+        <nav>
+          <h2 class="hidden">Main Menu</h2>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a>About</a></li>
+            <li><a href="../form/index.html">Form</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
+
 
   </body>
   <!-- article #1-->
   <article>
-    <h2>About Us</h2>
+    <h2 class="space">About Us</h2>
     <p>Pivot Creative Solutions is trade show company.
       They design, build, and install booths for company's at conferences and other events.
       They strive for excellence in all that they do and they deliver on it.

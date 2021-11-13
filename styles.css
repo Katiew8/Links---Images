@@ -264,6 +264,143 @@ header a:not([href]):hover {
   /*cannot figure out how to center*/
 }
 
+.space {
+  padding-top: 4rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.main-menu {
+  order: -1;
+  position: relative;
+  display: flex;
+}
+
+.main-menu .menu-icon {
+  user-select: none;
+  position: fixed;
+  top: 1.5rem;
+  left: 1.5rem;
+  width: 60px;
+  height: 60px;
+  background-color: var(--back-button-color);
+  border-radius: 50%;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-menu svg {
+  stroke: var(--h3-color);
+  stroke-width: 4px;
+  stroke-linecap: round;
+  padding: 12px;
+}
+
+.main-menu svg line {
+  transform-origin: center;
+  transition: transform 200ms ease;
+}
+
+.main-menu svg line:first-child {
+  transform: translateY(6px);
+}
+
+.main-menu svg line:last-child {
+  transform: translateY(-6px);
+}
+
+nav {
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  background-color: var(--h3-color);
+  padding: 2rem;
+
+  z-index: 2;
+  transition: transform 400ms ease;
+  transform: translateX(-600px);
+}
+
+.main-menu.menu-show nav {
+  transform: translateX(0);
+}
+
+.menu-show .menu-icon {
+  background-color: transparent;
+}
+.menu-show svg line {
+  stroke: var(--back-button-color);
+}
+.menu-show svg line:first-child {
+  transform: rotate(135deg);
+}
+
+.menu-show svg line:last-child {
+  transform: rotate(-135deg);
+}
+
+nav ul {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  margin: 6rem auto 4rem;
+  padding: 0;
+  max-width: 80rem;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 3.5rem;
+}
+
+nav a {
+  display: block;
+  padding: 1rem;
+  font-size: 2rem;
+  color: var(--back-button-color);
+  border-bottom: 1px solid var(--back-button-color);
+}
+
+nav a::after {
+  content: "";
+  display: block;
+  width: calc(100% + 12px);
+  height: 3px;
+  margin-left: -6px;
+  margin-top: 6px;
+  background-color: var(--h3-color);
+  transform: scale(0);
+  transition: transform 200ms ease-in, color 300ms ease-in;
+  transform-origin: right;
+}
+
+nav li:last-child a {
+  border-bottom: none;
+}
+
+nav a:not([href]) {
+  color: var(--back-button-color);
+}
+
+nav a:not([href]):hover {
+  color: var(--back-button-color);
+}
+
+nav a[href]:hover {
+  color: var(--back-button-color);
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
 @keyframes load {
   0% {
     transform: rotate(0deg);
@@ -335,6 +472,93 @@ header a:not([href]):hover {
     transform: scale(1);
     -webkit-animation-timing-function: ease-out;
     animation-timing-function: ease-out;
+  }
+}
+
+@media (min-width: 601px) {
+  .hero {
+    margin-bottom: 0;
+  }
+
+  body.home .main-menu {
+    order: 0;
+  }
+
+  :not(.home) h1 {
+    padding-top: 0rem;
+  }
+
+  .main-menu .menu-icon {
+    display: none;
+  }
+
+  .main-menu nav {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 2rem 1.5rem 2rem;
+    background-color: transparent;
+    padding: 0;
+    transform: none;
+    transition: none;
+    clip-path: unset;
+  }
+
+  nav ul {
+    flex-direction: row;
+    justify-content: space-between;
+    list-style-type: none;
+    margin: 0 auto;
+    max-width: 80rem;
+  }
+
+  nav a {
+    display: block;
+    font-size: 1.4rem;
+    color: var(--h3-color);
+    border: none;
+  }
+
+  nav a:not([href]) {
+    color: rgb(0, 255, 157);
+  }
+
+  nav a::after {
+    content: "";
+    display: block;
+    width: calc(100% + 12px);
+    height: 3px;
+    margin-left: -6px;
+    margin-top: 6px;
+    background-color: var(--h3-color);
+    transform: scale(0);
+    transition: transform 200ms ease-in, color 300ms ease-in;
+    transform-origin: right;
+  }
+
+  nav a[href]:hover {
+    color: var(--h3-color);
+  }
+
+  nav a[href]:hover::after {
+    transform: scale(1);
+    transform-origin: left;
+  }
+
+  .panel {
+    flex-direction: row;
+  }
+
+  .panel .text-wrapper {
+    flex: 1 1 60%;
+  }
+
+  .panel .image-wrapper {
+    flex: 1 1 40%;
+  }
+
+  .panel h2 {
+    margin-top: 0;
   }
 }
 

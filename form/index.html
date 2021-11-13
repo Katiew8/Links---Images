@@ -11,18 +11,35 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira Sans">
   <link rel="stylesheet" href="../styles.css">
   <title>Form</title>
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      document.querySelector(".menu-icon").addEventListener(
+        "click", () => {
+          document.querySelector(".main-menu")
+            .classList.toggle("menu-show");
+        })
+    })
+  </script>
 </head>
 
 <body class="form">
-  <!-- header w/ navigation and unordered list-->
   <header>
-    <nav>
-      <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../about/index.html"> About</a></li>
-        <li><a>Form</a></li>
-      </ul>
-    </nav>
+    <div class="main-menu">
+      <div class="menu-icon">
+        <svg>
+          <line x1="5%" y1="50%" x2="95%" y2="50%" />
+          <line x1="5%" y1="50%" x2="95%" y2="50%" />
+        </svg>
+      </div>
+      <nav>
+        <h2 class="hidden">Main Menu</h2>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about/index.html"> About</a></li>
+          <li><a>Form</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
 
