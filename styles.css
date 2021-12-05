@@ -401,6 +401,165 @@ nav a[href]:hover {
   gap: 2rem;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+.form {
+  display: grid;
+}
+
+body.form {
+  font-family: "Nanum Gothic", sans-serif;
+  line-height: 1.5;
+  background-color: lightblue;
+  color: white;
+  font-size: 1.2rem;
+}
+
+section {
+  margin: 0 1rem;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: 1rem;
+  line-height: 1;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-row-gap: 1rem;
+  grid-column-gap: 0.6rem;
+  align-items: center;
+}
+
+legend {
+  grid-column: span 2;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+input:not([type="checkbox"]):not([type="radio"]),
+textarea {
+  margin-bottom: 1rem;
+}
+
+input:hover {
+  outline: rgb(208, 255, 0) 2px;
+}
+
+form button.pink {
+  justify-self: center;
+  margin-bottom: 6rem;
+  color: black;
+  background-color: rgb(208, 255, 0);
+  border-radius: 20px;
+  line-height: 1.7rem;
+}
+
+button.pink:hover {
+  background-color: #004200;
+  color: white;
+}
+
+.space {
+  position: relative;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  position: relative;
+  width: 28px;
+  height: 28px;
+  border: 2px solid var(white);
+}
+
+input[type="checkbox"] {
+  border-radius: 6px;
+  transition: background-color 400ms, border-color 450ms, box-shadow 500ms;
+}
+
+input[type="radio"] {
+  border-radius: 35%;
+}
+
+input[type="checkbox"]:hover,
+input[type="checkbox"]:focus,
+input[type="radio"]:hover,
+input[type="radio"]:focus {
+  border: 1.8px solid var(white);
+  box-shadow: 0 0 1.8px var(white);
+  outline: none;
+}
+
+input[type="checkbox"]:checked:hover,
+input[type="checkbox"]:checked:focus {
+  border: 2px solid var(darkblue);
+  box-shadow: 0 0 3px var(darkblue);
+  outline: none;
+}
+
+input[type="checkbox"]:checked {
+  background-color: var(darkblue);
+  border-color: var(darkblue);
+}
+
+input[type="checkbox"]:checked::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 1px;
+  right: 7px;
+  width: calc(28px / 4);
+  height: calc(28px / 2);
+  border-right: 4.2px solid #fff;
+  border-bottom: 4.2px solid #fff;
+  transform: rotate(38deg);
+}
+
+input[type="radio"]::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 20px;
+  height: 20px;
+  border-radius: 49%;
+  background-color: var(darkblue);
+  transform: scale(0);
+  transition: transform 400ms;
+}
+
+input[type="radio"]:checked::after {
+  transform: scale(1);
+}
+
+@media (min-width: 500px) {
+  form {
+    grid-template-columns: max-content 1fr;
+  }
+
+  fieldset,
+  label[for="wish"],
+  textarea,
+  button {
+    grid-column: 2;
+  }
+
+  button.pink {
+    justify-self: start;
+  }
+}
+
 @keyframes load {
   0% {
     transform: rotate(0deg);
