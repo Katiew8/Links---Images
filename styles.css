@@ -547,12 +547,12 @@ button.pink:hover {
 
 input[type="checkbox"],
 input[type="radio"] {
-  /*appearance: none;
-  -webkit-appearance: none;*/
+  appearance: none;
+  -webkit-appearance: none;
   position: relative;
   width: 28px;
   height: 28px;
-  border: 2px solid var(white);
+  border: 2px solid white;
 }
 
 input[type="checkbox"] {
@@ -561,28 +561,28 @@ input[type="checkbox"] {
 }
 
 input[type="radio"] {
-  border-radius: 35%;
+  border-radius: 70%;
 }
 
 input[type="checkbox"]:hover,
 input[type="checkbox"]:focus,
 input[type="radio"]:hover,
 input[type="radio"]:focus {
-  border: 1.8px solid var(white);
-  box-shadow: 0 0 1.8px var(white);
+  border: 1.8px solid white;
+  box-shadow: 0 0 1.8px white;
   outline: none;
 }
 
 input[type="checkbox"]:checked:hover,
 input[type="checkbox"]:checked:focus {
-  border: 2px solid var(darkblue);
-  box-shadow: 0 0 3px var(darkblue);
+  border: 2px solid var(--h3-color);
+  box-shadow: 0 0 3px var(--h3-color);
   outline: none;
 }
 
 input[type="checkbox"]:checked {
-  background-color: var(darkblue);
-  border-color: var(darkblue);
+  background-color: var(--h3-color);
+  border-color: var(--h3-color);
 }
 
 input[type="checkbox"]:checked::after {
@@ -602,12 +602,12 @@ input[type="radio"]::after {
   content: "";
   display: block;
   position: absolute;
-  top: 2px;
-  right: 2px;
+  top: 2.4px;
+  right: 2.1px;
   width: 20px;
   height: 20px;
   border-radius: 49%;
-  background-color: var(darkblue);
+  background-color: var(--h3-color);
   transform: scale(0);
   transition: transform 400ms;
 }
